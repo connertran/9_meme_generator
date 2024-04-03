@@ -1,0 +1,212 @@
+h1,
+h3,
+.image-url-row,
+.text-on-top-row,
+.text-on-bottom-row {
+  font-family: Arial;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  height: 300px;
+  justify-content: space-between;
+  background-color: rgb(240, 240, 240);
+}
+
+.h1-box,
+.description-box {
+  display: flex;
+  justify-content: center;
+}
+
+.description-box {
+  margin-top: -60px;
+}
+
+.image-url-row,
+.text-on-top-row,
+.text-on-bottom-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+input {
+  width: 80vw;
+  height: 25px;
+  position: relative;
+  right: 40px;
+  border-width: 0;
+  border-radius: 4px;
+}
+
+.title-for-input {
+  position: relative;
+  left: 20px;
+}
+
+.submit-button-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.submit-button {
+  position: relative;
+  right: 40px;
+  bottom: 5px;
+  border: none;
+  color: white;
+  background-color: hsl(195, 97.5%, 46.1%);
+  ;
+  font-weight: bold;
+  padding: 9px 18px;
+  border-radius: 4px;
+  /* smooth transition */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.submit-button:active {
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  background-color: hsl(195, 97.5%, 55%);
+}
+
+/* section where the users can see the results */
+.memes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  margin-top: 10px;
+}
+
+.meme-image-size {
+  width: 270px;
+  height: 100%;
+  /* this would maitain the quality of the image */
+  object-fit: cover;
+  object-position: center;
+
+  /* to make the meme look nice */
+  border-radius: 8px;
+}
+
+.individual-meme-div {
+  position: relative;
+  /* for the hover layer so it doesn't overflow its boundaries */
+  overflow: hidden;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.meme-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.individual-meme-div:hover .meme-overlay {
+  opacity: 1;
+}
+
+.delete-icon {
+  color: white;
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meme-top-text,
+.meme-bottom-text {
+  font-family: Arial;
+  font-size: 1.5em;
+  color: white;
+  /* this text shadow code was generated from https://owumaro.github.io/text-stroke-generator/ */
+  text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
+}
+
+.meme-top-text {
+  position: absolute;
+  top: 3px;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* one line of text */
+  justify-content: center;
+  /* multiple lines of text */
+  text-align: center;
+}
+
+.meme-bottom-text {
+  position: absolute;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* one line of text */
+  justify-content: center;
+  bottom: 5px;
+  flex-wrap: wrap;
+  /* multiple lines of text */
+  text-align: center;
+}
+
+
+/* for smaller devices */
+/* for example iPad Air or iPhone XR */
+@media (max-width: 820px) {
+
+  .image-url-row,
+  .text-on-top-row,
+  .text-on-bottom-row {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    height: 400px;
+    justify-content: space-evenly;
+    background-color: rgb(240, 240, 240);
+  }
+
+  input {
+    width: 80vw;
+    height: 25px;
+    align-self: center;
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    top: 0.5em;
+    left: 0.5em;
+  }
+}
